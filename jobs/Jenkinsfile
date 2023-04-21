@@ -23,13 +23,16 @@ pipeline {
   post {
       always {          
           deleteDir()
+           "@echo off"
            "echo 'fase always'"
       }
       success {
+            "@echo off"
             "echo 'fase success'"
         }
 
       failure {
+            "@echo off"
             "echo 'fase failure'"
       }
       
