@@ -14,7 +14,7 @@ pipeline {
      
       steps {
           script {			           
-           "echo hola mundo"
+           bat 'wmic computersystem get name'
         }
       }
     }
@@ -22,14 +22,14 @@ pipeline {
   post {
       always {          
           deleteDir()
-           "echo fase always"
+           bat "echo fase always"
       }
       success {
-            "echo fase success"
+            bat "echo fase success"
         }
 
       failure {
-            "echo fase failure"
+            bat "echo fase failure"
       }
       
   }
